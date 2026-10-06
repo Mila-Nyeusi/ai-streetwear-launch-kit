@@ -1,2 +1,2 @@
 # AI Business Launch Kit 
-AI-powered streetwear brand launch and marketing system
+AI-powered BUSINESS  launch and marketing system
