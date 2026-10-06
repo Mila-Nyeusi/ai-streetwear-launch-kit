@@ -1,1064 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AI Business Launch Kit | Build. Market. Grow.</title>
+<title>AI Business Launch Kit | Build. Market. Sell. Grow.</title>
 
-  <meta name="description" content="An AI-powered business toolkit for entrepreneurs and business owners to build, market, launch and grow their businesses.">
+<meta name="description" content="The AI Business Launch Kit gives business owners 100 ready-to-use AI prompts, marketing systems, sales tools, strategy frameworks and a 30-day launch plan.">
 
-  <style>
-    :root {
-      --bg: #080808;
-      --panel: #111111;
-      --panel2: #151515;
-      --text: #f5f3ee;
-      --muted: #aaa7a0;
-      --gold: #d7b779;
-      --line: #292929;
-    }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #f5f1e8;
+    line-height: 1.6;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* NAVIGATION */
 
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
-    }
+nav {
+    padding: 25px 0;
+    border-bottom: 1px solid #242424;
+}
 
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-    }
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
 
-    .logo {
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 3px;
-    }
+.nav-label {
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
 
-    .nav-link {
-      color: var(--muted);
-      font-size: 13px;
-    }
+/* HERO */
+
+.hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, #252015 0%, #080808 48%);
+}
+
+.eyebrow {
+    color: #c9a45c;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(46px, 8vw, 92px);
+    line-height: .95;
+    letter-spacing: -4px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero h1 span {
+    color: #c9a45c;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin: 30px auto;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.button {
+    display: inline-block;
+    background: #c9a45c;
+    color: #080808;
+    padding: 17px 30px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: #e0bd72;
+}
+
+.price {
+    margin-top: 16px;
+    color: #888;
+    font-size: 13px;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 90px 0;
+    border-top: 1px solid #1d1d1d;
+}
+
+.section-title {
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    color: #999;
+    max-width: 650px;
+    margin-bottom: 45px;
+}
+
+/* CARDS */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.card {
+    border: 1px solid #292929;
+    background: #101010;
+    padding: 30px;
+    min-height: 190px;
+}
+
+.card-number {
+    color: #c9a45c;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #999;
+}
+
+/* PRODUCT */
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.product-box {
+    border: 1px solid #292929;
+    background: linear-gradient(145deg, #171717, #0c0c0c);
+    padding: 45px;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edition {
+    color: #c9a45c;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.product-box h2 {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.product-box p {
+    color: #999;
+}
+
+/* LIST */
+
+.check-list {
+    list-style: none;
+}
+
+.check-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid #222;
+    color: #ccc;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: #c9a45c;
+    margin-right: 12px;
+}
+
+/* CTA */
+
+.final-cta {
+    text-align: center;
+    padding: 110px 0;
+    background:
+        radial-gradient(circle at center, #211c12 0%, #080808 55%);
+}
+
+.final-cta h2 {
+    font-size: clamp(40px, 7vw, 75px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.final-cta p {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    color: #999;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #222;
+    padding: 30px 0;
+    color: #666;
+    font-size: 12px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
 
     .hero {
-      padding: 95px 0 85px;
-      text-align: center;
-      background:
-        radial-gradient(
-          ellipse at 50% 0%,
-          #30271a 0%,
-          transparent 55%
-        );
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 25px;
+        padding: 75px 0 65px;
     }
 
     h1 {
-      font-size: clamp(44px, 9vw, 86px);
-      line-height: 1;
-      letter-spacing: -4px;
-      max-width: 950px;
-      margin: auto;
+        letter-spacing: -2px;
     }
 
-    h1 span {
-      color: var(--gold);
+    .grid,
+    .product {
+        grid-template-columns: 1fr;
     }
 
-    .hero-copy {
-      max-width: 680px;
-      margin: 28px auto 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .actions {
-      margin-top: 36px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 17px 28px;
-      border: 1px solid var(--gold);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: .2s ease;
-    }
-
-    .button-primary {
-      background: var(--gold);
-      color: #111;
-    }
-
-    .button-secondary {
-      color: var(--gold);
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      opacity: .9;
-    }
-
-    .price-note {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .trust {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 23px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 2px;
+    .product-box {
+        min-height: 350px;
     }
 
     section {
-      padding: 85px 0;
-    }
-
-    .label {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: clamp(32px, 6vw, 52px);
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    .section-copy {
-      color: var(--muted);
-      max-width: 680px;
-    }
-
-    .problem {
-      background: #0d0d0d;
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .problem-list {
-      list-style: none;
-      margin-top: 25px;
-    }
-
-    .problem-list li {
-      padding: 13px 0;
-      border-bottom: 1px solid var(--line);
-      color: #ddd9d0;
-    }
-
-    .problem-list li::before {
-      content: "×";
-      color: var(--gold);
-      font-weight: bold;
-      margin-right: 13px;
-    }
-
-    .solution-box {
-      border: 1px solid #3b3428;
-      background: linear-gradient(145deg, #191611, #0c0c0c);
-      padding: 35px;
-    }
-
-    .solution-box strong {
-      display: block;
-      font-size: 23px;
-      margin-bottom: 14px;
-    }
-
-    .solution-box p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .systems {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 40px;
-    }
-
-    .system {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      padding: 27px;
-    }
-
-    .system-number {
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 24px;
-    }
-
-    .system h3 {
-      font-size: 19px;
-      margin-bottom: 10px;
-    }
-
-    .system p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .audience {
-      background: #11100e;
-      border-top: 1px solid #332c20;
-      border-bottom: 1px solid #332c20;
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 35px;
-    }
-
-    .audience-item {
-      padding: 22px 15px;
-      border: 1px solid var(--line);
-      text-align: center;
-      color: #dedbd4;
-      font-size: 14px;
-    }
-
-    .included {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .check-list {
-      list-style: none;
-      margin-top: 25px;
-    }
-
-    .check-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .check-list li::before {
-      content: "✦";
-      color: var(--gold);
-      margin-right: 12px;
-    }
-
-    .product-card {
-      border: 1px solid #3a3327;
-      background: linear-gradient(145deg, #191713, #0b0b0b);
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    .product-label {
-      color: var(--gold);
-      letter-spacing: 4px;
-      font-size: 10px;
-      margin-bottom: 22px;
-    }
-
-    .product-card h3 {
-      font-size: 31px;
-      line-height: 1.15;
-    }
-
-    .product-card p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 15px;
-    }
-
-    .price {
-      font-size: 44px;
-      font-weight: 800;
-      margin: 25px 0;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .step {
-      border-top: 1px solid var(--gold);
-      padding-top: 20px;
-    }
-
-    .step-number {
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    .step h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .faq {
-      max-width: 800px;
-      margin: 35px auto 0;
-    }
-
-    details {
-      border-bottom: 1px solid var(--line);
-      padding: 20px 0;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    details p {
-      color: var(--muted);
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    .final {
-      text-align: center;
-      background:
-        radial-gradient(
-          ellipse at center,
-          #241e14,
-          transparent 70%
-        );
-    }
-
-    .final .section-copy {
-      margin: auto;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    @media (max-width: 750px) {
-
-      .hero {
         padding: 70px 0;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .problem-grid,
-      .included {
-        grid-template-columns: 1fr;
-      }
-
-      .systems {
-        grid-template-columns: 1fr;
-      }
-
-      .audience-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 0;
-      }
     }
-  </style>
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a class="logo" href="#">AI BUSINESS</a>
-      <a class="nav-link" href="#inside">What's inside ↓</a>
-    </nav>
-  </div>
-</header>
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">AI BUSINESS LAUNCH KIT</div>
+        <div class="nav-label">EDITION 01</div>
+    </div>
+</nav>
 
-<main>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
+<header class="hero">
     <div class="container">
 
-      <p class="eyebrow">
-        The AI Business Growth System
-      </p>
+        <div class="eyebrow">THE BUSINESS BUILDER</div>
 
-      <h1>
-        BUILD YOUR BUSINESS.<br>
-        <span>MAKE YOUR MOVE.</span>
-      </h1>
+        <h1>
+            BUILD.<br>
+            MARKET.<br>
+            <span>GROW.</span>
+        </h1>
 
-      <p class="hero-copy">
-        Use AI to turn your ideas into better offers, stronger branding,
-        content, marketing campaigns, sales systems and actionable growth plans.
-      </p>
-
-      <div class="actions">
+        <p class="hero-text">
+            A practical AI-powered business toolkit designed to help
+            entrepreneurs turn ideas into offers, marketing campaigns,
+            customers and real business momentum.
+        </p>
 
         <a
-          class="button button-primary"
-          href="https://payhip.com/b/spgJU">
-          Get the Business Launch Kit — $29
+            class="button"
+            href="https://payhip.com/b/IPKwg"
+            target="_blank"
+        >
+            GET THE LAUNCH KIT — $29
         </a>
-
-      </div>
-
-      <p class="price-note">
-        Digital toolkit · Beginner-friendly · One-time purchase
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <div class="trust">
-    BUILD &nbsp; / &nbsp;
-    BRAND &nbsp; / &nbsp;
-    MARKET &nbsp; / &nbsp;
-    SELL &nbsp; / &nbsp;
-    GROW
-  </div>
-
-
-  <!-- PROBLEM -->
-
-  <section class="problem">
-
-    <div class="container problem-grid">
-
-      <div>
-
-        <p class="label">
-          The problem
-        </p>
-
-        <h2>
-          You don't need more ideas.
-          You need a system.
-        </h2>
-
-        <p class="section-copy">
-          AI can generate almost anything — but knowing what to ask,
-          what to create, what to publish and what to do next can be overwhelming.
-        </p>
-
-        <ul class="problem-list">
-
-          <li>
-            You don't know what to focus on first.
-          </li>
-
-          <li>
-            Your marketing feels inconsistent.
-          </li>
-
-          <li>
-            You have ideas but struggle to execute them.
-          </li>
-
-          <li>
-            You want more customers without wasting money.
-          </li>
-
-          <li>
-            You don't know how to use AI effectively for business.
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div class="solution-box">
-
-        <strong>
-          Meet your AI business toolkit.
-        </strong>
-
-        <p>
-          A practical collection of prompts, frameworks, workflows
-          and launch tools designed to help you move from idea to execution.
-        </p>
-
-        <div class="actions">
-
-          <a
-            class="button button-primary"
-            href="https://payhip.com/b/spgJU">
-            Get the Kit
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SYSTEM -->
-
-  <section id="inside">
-
-    <div class="container">
-
-      <p class="label">
-        The system
-      </p>
-
-      <h2>
-        Six systems.<br>
-        One business toolkit.
-      </h2>
-
-      <p class="section-copy">
-        Work through the areas that matter most to your business,
-        whether you're starting from zero or already operating.
-      </p>
-
-
-      <div class="systems">
-
-        <article class="system">
-
-          <p class="system-number">01 / BUILD</p>
-
-          <h3>Business Strategy</h3>
-
-          <p>
-            Develop ideas, offers, positioning, customer profiles
-            and practical business plans.
-          </p>
-
-        </article>
-
-
-        <article class="system">
-
-          <p class="system-number">02 / BRAND</p>
-
-          <h3>Brand Strategy</h3>
-
-          <p>
-            Define your identity, voice, story, positioning
-            and differentiation.
-          </p>
-
-        </article>
-
-
-        <article class="system">
-
-          <p class="system-number">03 / CREATE</p>
-
-          <h3>Content & Creative</h3>
-
-          <p>
-            Generate content ideas, visuals, campaigns,
-            product concepts and creative directions.
-          </p>
-
-        </article>
-
-
-        <article class="system">
-
-          <p class="system-number">04 / MARKET</p>
-
-          <h3>Marketing System</h3>
-
-          <p>
-            Build social content, campaigns, outreach,
-            partnerships and customer acquisition experiments.
-          </p>
-
-        </article>
-
-
-        <article class="system">
-
-          <p class="system-number">05 / SELL</p>
-
-          <h3>Sales System</h3>
-
-          <p>
-            Create offers, landing pages, sales copy,
-            objection handling and conversion strategies.
-          </p>
-
-        </article>
-
-
-        <article class="system">
-
-          <p class="system-number">06 / GROW</p>
-
-          <h3>Growth System</h3>
-
-          <p>
-            Measure performance, test ideas, improve customer
-            journeys and build repeatable growth processes.
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WHO IT IS FOR -->
-
-  <section class="audience">
-
-    <div class="container">
-
-      <p class="label">
-        Built for business owners
-      </p>
-
-      <h2>
-        One toolkit.<br>
-        Many types of businesses.
-      </h2>
-
-      <p class="section-copy">
-        The framework is designed to adapt to different industries,
-        products, services and business models.
-      </p>
-
-
-      <div class="audience-grid">
-
-        <div class="audience-item">
-          E-commerce
-        </div>
-
-        <div class="audience-item">
-          Restaurants
-        </div>
-
-        <div class="audience-item">
-          Fashion
-        </div>
-
-        <div class="audience-item">
-          Beauty
-        </div>
-
-        <div class="audience-item">
-          Freelancers
-        </div>
-
-        <div class="audience-item">
-          Agencies
-        </div>
-
-        <div class="audience-item">
-          Creators
-        </div>
-
-        <div class="audience-item">
-          Local Businesses
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WHAT YOU GET -->
-
-  <section>
-
-    <div class="container included">
-
-      <div>
-
-        <p class="label">
-          What's included
-        </p>
-
-        <h2>
-          Everything you need to start using AI for business.
-        </h2>
-
-        <p class="section-copy">
-          Stop wondering what to ask AI. Start with ready-to-use
-          frameworks and adapt them to your business.
-        </p>
-
-
-        <ul class="check-list">
-
-          <li>
-            100+ ready-to-use AI prompts
-          </li>
-
-          <li>
-            Business and brand strategy prompts
-          </li>
-
-          <li>
-            Marketing and campaign systems
-          </li>
-
-          <li>
-            Sales and conversion frameworks
-          </li>
-
-          <li>
-            Content creation workflows
-          </li>
-
-          <li>
-            Growth experiments
-          </li>
-
-          <li>
-            30-day launch calendar
-          </li>
-
-          <li>
-            Business launch checklist
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div class="product-card">
-
-        <p class="product-label">
-          DIGITAL TOOLKIT
-        </p>
-
-        <h3>
-          AI BUSINESS<br>
-          LAUNCH KIT
-        </h3>
-
-        <p>
-          Your practical AI system for building,
-          marketing and growing a business.
-        </p>
 
         <div class="price">
-          $29
+            Instant digital access • 100+ ready-to-use AI prompts
         </div>
+
+    </div>
+</header>
+
+
+<section>
+    <div class="container">
+
+        <div class="eyebrow">WHAT'S INSIDE</div>
+
+        <h2 class="section-title">
+            Everything you need to move from idea to execution.
+        </h2>
+
+        <p class="section-subtitle">
+            Stop staring at a blank page. Use proven AI workflows,
+            strategic prompts and practical business systems to
+            move faster and make better decisions.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-number">01</div>
+                <h3>Business Strategy</h3>
+                <p>
+                    Clarify your business model, goals, positioning
+                    and next strategic moves.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">02</div>
+                <h3>Market Research</h3>
+                <p>
+                    Use AI to understand customers, competitors,
+                    opportunities and market demand.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">03</div>
+                <h3>Offers & Pricing</h3>
+                <p>
+                    Build stronger offers, packages, pricing structures
+                    and value propositions.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">04</div>
+                <h3>Branding</h3>
+                <p>
+                    Develop a clear brand identity, positioning,
+                    messaging and customer experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">05</div>
+                <h3>Content & Social</h3>
+                <p>
+                    Generate content ideas, calendars, captions,
+                    campaigns and social strategies.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">06</div>
+                <h3>Marketing Campaigns</h3>
+                <p>
+                    Create practical campaigns designed to attract
+                    attention and generate demand.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">07</div>
+                <h3>Sales & Conversion</h3>
+                <p>
+                    Improve sales messaging, customer objections,
+                    offers and conversion systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">08</div>
+                <h3>Operations & Growth</h3>
+                <p>
+                    Build systems for execution, organization,
+                    financial thinking and sustainable growth.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section>
+    <div class="container product">
+
+        <div class="product-box">
+
+            <div class="edition">EDITION 01</div>
+
+            <h2>
+                AI Business<br>
+                Launch Kit
+            </h2>
+
+            <p>
+                100+ ready-to-use AI prompts and practical business
+                frameworks packaged into one execution-focused toolkit.
+            </p>
+
+        </div>
+
+        <div>
+
+            <div class="eyebrow">BUILT FOR BUSINESS OWNERS</div>
+
+            <h2 class="section-title">
+                Less guessing.<br>
+                More execution.
+            </h2>
+
+            <ul class="check-list">
+
+                <li>100+ ready-to-use AI business prompts</li>
+
+                <li>Business strategy frameworks</li>
+
+                <li>Customer and market research prompts</li>
+
+                <li>Offer and pricing systems</li>
+
+                <li>Branding and positioning tools</li>
+
+                <li>Content and marketing systems</li>
+
+                <li>Sales and conversion frameworks</li>
+
+                <li>30-day business launch plan</li>
+
+                <li>Launch checklist and KPI dashboard</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="eyebrow">YOUR NEXT MOVE</div>
+
+        <h2>
+            Turn the idea<br>
+            into action.
+        </h2>
+
+        <p>
+            Get the complete AI Business Launch Kit and start
+            building with a clear system instead of starting
+            from scratch every time.
+        </p>
 
         <a
-          class="button button-primary"
-          href="https://payhip.com/b/spgJU">
-          Get Instant Access
+            class="button"
+            href="https://payhip.com/b/IPKwg"
+            target="_blank"
+        >
+            GET THE AI BUSINESS LAUNCH KIT — $29
         </a>
 
-      </div>
-
     </div>
 
-  </section>
-
-
-  <!-- HOW IT WORKS -->
-
-  <section>
-
-    <div class="container">
-
-      <p class="label">
-        How it works
-      </p>
-
-      <h2>
-        From idea to action.
-      </h2>
-
-
-      <div class="steps">
-
-        <div class="step">
-
-          <p class="step-number">01</p>
-
-          <h3>
-            Choose your goal
-          </h3>
-
-          <p>
-            Decide whether you're building, launching,
-            marketing or growing.
-          </p>
-
-        </div>
-
-
-        <div class="step">
-
-          <p class="step-number">02</p>
-
-          <h3>
-            Use the prompts
-          </h3>
-
-          <p>
-            Copy a framework, add your business information
-            and use it with your preferred AI tool.
-          </p>
-
-        </div>
-
-
-        <div class="step">
-
-          <p class="step-number">03</p>
-
-          <h3>
-            Execute
-          </h3>
-
-          <p>
-            Turn the AI output into real business actions,
-            content, campaigns and experiments.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FAQ -->
-
-  <section>
-
-    <div class="container">
-
-      <p class="label">
-        FAQ
-      </p>
-
-      <h2>
-        Questions?
-      </h2>
-
-
-      <div class="faq">
-
-        <details>
-
-          <summary>
-            Who is this for?
-          </summary>
-
-          <p>
-            Business owners, entrepreneurs, creators,
-            freelancers and anyone building or growing a business.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Do I need to be an AI expert?
-          </summary>
-
-          <p>
-            No. The prompts and frameworks are designed to be
-            adapted by beginners as well as experienced users.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            What businesses can use it?
-          </summary>
-
-          <p>
-            The system is designed to be adaptable across
-            products, services, e-commerce, local businesses,
-            creative businesses and many other industries.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Is this a physical product?
-          </summary>
-
-          <p>
-            No. This is a digital business toolkit.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            What AI tools can I use?
-          </summary>
-
-          <p>
-            You can adapt the prompts to the AI tools you already use.
-          </p>
-
-        </details>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FINAL CTA -->
-
-  <section class="final">
-
-    <div class="container">
-
-      <p class="label">
-        Your next move
-      </p>
-
-      <h2>
-        Stop guessing.<br>
-        Start building.
-      </h2>
-
-      <p class="section-copy">
-        Give your business a practical AI-powered system
-        for turning ideas into action.
-      </p>
-
-
-      <div class="actions">
-
-        <a
-          class="button button-primary"
-          href="https://payhip.com/b/spgJU">
-          Get the AI Business Launch Kit — $29
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
+</section>
 
 
 <footer>
 
-  <div class="container">
+    <div class="container footer-inner">
 
-    <p>
-      AI BUSINESS LAUNCH KIT
-    </p>
+        <div>
+            AI BUSINESS LAUNCH KIT
+        </div>
 
-    <p style="margin-top:8px;">
-      Build smarter. Market better. Grow with intention.
-    </p>
+        <div>
+            BUILD • MARKET • SELL • GROW
+        </div>
 
-  </div>
+    </div>
 
 </footer>
 
