@@ -4,146 +4,546 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AI Streetwear Launch Kit</title>
+  <title>AI Streetwear Launch Kit | Build Your Brand</title>
+
+  <meta name="description" content="Launch your streetwear brand with 100 AI prompts, a 30-day launch calendar, product photography prompts, marketing systems and more.">
 
   <style>
-    body {
+    :root {
+      --bg: #090909;
+      --panel: #111111;
+      --text: #f5f3ef;
+      --muted: #a5a29c;
+      --gold: #d7b779;
+      --line: #292929;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: #0b0b0b;
-      color: white;
-      font-family: Arial, sans-serif;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      max-width: 900px;
+      width: min(1100px, 90%);
       margin: auto;
-      padding: 80px 25px;
-      text-align: center;
     }
 
-    .badge {
-      color: #aaa;
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 800;
       letter-spacing: 3px;
-      font-size: 12px;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero {
+      padding: 100px 0 85px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, #292218 0%, transparent 55%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
       text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: clamp(45px, 8vw, 90px);
-      line-height: 0.95;
-      margin: 25px 0;
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      max-width: 900px;
+      margin: 0 auto 25px;
     }
 
-    p {
-      color: #aaa;
-      font-size: 19px;
-      line-height: 1.6;
-      max-width: 650px;
-      margin: 20px auto;
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 25px;
-      padding: 18px 35px;
-      background: white;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
+      padding: 16px 25px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .price-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 650px;
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 70px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 38px;
     }
 
-    .card {
-      border: 1px solid #292929;
-      padding: 25px;
-      text-align: left;
-      border-radius: 8px;
+    .feature {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 27px;
     }
 
-    .card h3 {
-      margin-top: 0;
+    .feature-number {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .feature h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .highlight {
+      background: #11100e;
+      border-top: 1px solid #332c20;
+      border-bottom: 1px solid #332c20;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      color: #dedbd5;
+    }
+
+    .check-list li::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 12px;
+    }
+
+    .product-card {
+      border: 1px solid #3a3327;
+      background: linear-gradient(145deg, #191713, #0c0c0c);
+      padding: 35px;
+      text-align: center;
+    }
+
+    .product-card .mini-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      margin-bottom: 22px;
+    }
+
+    .product-card h3 {
+      font-size: 31px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .product-card .product-subtitle {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .product-card .big-price {
+      font-size: 42px;
+      font-weight: 800;
+      margin: 25px 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .step {
+      border-top: 1px solid var(--gold);
+      padding-top: 20px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: radial-gradient(ellipse at center, #211d16, transparent 70%);
+    }
+
+    .final-cta .section-copy {
+      margin: 0 auto;
     }
 
     footer {
-      margin-top: 80px;
-      color: #555;
-      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 750px) {
+      .hero {
+        padding: 75px 0 65px;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .features,
+      .two-column,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .feature {
+        padding: 24px;
+      }
+
+      .two-column {
+        gap: 35px;
+      }
+
+      .logo {
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">AI STREETWEAR</a>
+        <a class="nav-link" href="#inside">What's inside ↘</a>
+      </nav>
+    </div>
+  </header>
 
-    <div class="badge">
-      For the next generation of streetwear founders
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">The Streetwear Brand Builder</p>
+
+        <h1>
+          BUILD YOUR BRAND.<br>
+          <span>MAKE YOUR MOVE.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Turn your streetwear idea into a brand with a clear identity,
+          stronger visuals and a practical launch plan — powered by AI.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary"
+             href="https://payhip.com/b/spgJU">
+            Get the Launch Kit — $29
+          </a>
+        </div>
+
+        <p class="price-note">
+          Digital product · PDF download · One-time payment
+        </p>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      BRAND STRATEGY &nbsp; / &nbsp; AI WORKFLOWS &nbsp; / &nbsp; CREATIVE DIRECTION
     </div>
 
-    <h1>
-      BUILD YOUR<br>
-      STREETWEAR<br>
-      BRAND WITH AI.
-    </h1>
+    <section id="inside">
+      <div class="container">
+        <p class="section-label">Inside the kit</p>
 
-    <p>
-      A practical AI-powered toolkit for creating product campaigns,
-      fashion visuals, social content and launch strategies without
-      needing an expensive creative agency.
-    </p>
+        <h2>Everything starts<br>with a system.</h2>
 
-    <a class="button" href="#">
-      GET THE LAUNCH KIT — $29
-    </a>
-
-    <div class="features">
-
-      <div class="card">
-        <h3>01 — AI Prompts</h3>
-        <p>
-          Product photography, fashion editorials,
-          campaigns and social-media prompts.
+        <p class="section-copy">
+          Stop staring at a blank page. Use structured prompts and
+          practical frameworks to move from ideas to execution.
         </p>
-      </div>
 
-      <div class="card">
-        <h3>02 — Content System</h3>
-        <p>
-          Build weeks of content ideas, hooks and
-          captions for your brand.
+        <div class="features">
+
+          <article class="feature">
+            <p class="feature-number">01 / CREATE</p>
+            <h3>100 AI Prompts</h3>
+            <p>
+              Generate brand ideas, creative directions, product concepts
+              and content using ready-to-use prompts.
+            </p>
+          </article>
+
+          <article class="feature">
+            <p class="feature-number">02 / PLAN</p>
+            <h3>30-Day Launch Calendar</h3>
+            <p>
+              Organize your launch with a practical calendar that helps
+              turn big goals into manageable actions.
+            </p>
+          </article>
+
+          <article class="feature">
+            <p class="feature-number">03 / SHOOT</p>
+            <h3>Product Photography</h3>
+            <p>
+              Develop product-shot concepts, visual directions and
+              campaign imagery with AI.
+            </p>
+          </article>
+
+          <article class="feature">
+            <p class="feature-number">04 / MARKET</p>
+            <h3>Campaign Concepts</h3>
+            <p>
+              Build creative campaign ideas that give your brand a
+              recognizable visual direction.
+            </p>
+          </article>
+
+          <article class="feature">
+            <p class="feature-number">05 / CONNECT</p>
+            <h3>Social Content System</h3>
+            <p>
+              Plan social posts and content themes to communicate
+              your brand consistently.
+            </p>
+          </article>
+
+          <article class="feature">
+            <p class="feature-number">06 / SELL</p>
+            <h3>Sales Copy & Strategy</h3>
+            <p>
+              Shape your product messaging, brand positioning and
+              launch checklist.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="container two-column">
+
+        <div>
+          <p class="section-label">Built for action</p>
+          <h2>Your idea deserves<br>a real launch.</h2>
+
+          <p class="section-copy">
+            Whether you're starting from zero or refining an existing
+            streetwear label, use the kit to organize your next move.
+          </p>
+
+          <ul class="check-list">
+            <li>Build a clearer brand identity</li>
+            <li>Create a consistent visual direction</li>
+            <li>Plan content before launch day</li>
+            <li>Develop product and campaign concepts</li>
+            <li>Follow a practical launch checklist</li>
+          </ul>
+        </div>
+
+        <div class="product-card">
+          <p class="mini-label">THE DIGITAL TOOLKIT</p>
+          <h3>AI STREETWEAR<br>LAUNCH KIT</h3>
+          <p class="product-subtitle">
+            Your creative and marketing system for streetwear.
+          </p>
+          <p class="big-price">$29</p>
+
+          <a class="button button-primary"
+             href="https://payhip.com/b/spgJU">
+            Get Instant Access
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">How it works</p>
+        <h2>Three steps. Start building.</h2>
+
+        <div class="steps">
+          <div class="step">
+            <strong>01. Get the kit</strong>
+            <p>Purchase the digital product through the product page.</p>
+          </div>
+
+          <div class="step">
+            <strong>02. Choose your goal</strong>
+            <p>Start with the prompts and frameworks relevant to your brand.</p>
+          </div>
+
+          <div class="step">
+            <strong>03. Put it to work</strong>
+            <p>Use the system to develop your visuals, content and launch plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <p class="section-label">Your next move</p>
+        <h2>Stop waiting.<br>Start building.</h2>
+
+        <p class="section-copy">
+          Give your streetwear idea the structure it needs to move forward.
         </p>
-      </div>
 
-      <div class="card">
-        <h3>03 — Launch Strategy</h3>
-        <p>
-          A simple system for preparing, launching
-          and promoting your first collection.
-        </p>
+        <div class="actions">
+          <a class="button button-primary"
+             href="https://payhip.com/b/spgJU">
+            Get the Launch Kit — $29
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>04 — Brand Templates</h3>
-        <p>
-          Campaign concepts, product descriptions,
-          packaging ideas and marketing templates.
-        </p>
-      </div>
+  </main>
 
+  <footer>
+    <div class="container">
+      <p>AI STREETWEAR LAUNCH KIT</p>
+      <p style="margin-top: 8px;">
+        Build with intention. Launch with direction.
+      </p>
     </div>
-
-    <footer>
-      © 2026 AI Streetwear Launch Kit
-    </footer>
-
-  </div>
+  </footer>
 
 </body>
 </html>
